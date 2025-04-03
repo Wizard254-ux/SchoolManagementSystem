@@ -1,8 +1,7 @@
-import React,{JSX} from 'react'
+import {JSX} from 'react'
 import { Route,Routes } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import Message from './Message'
-import Deals from './Deals'
 import Contact from './Contact';
 import Reports from './Reports'
 import Settings from './Settings'

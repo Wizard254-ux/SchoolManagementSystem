@@ -1,4 +1,4 @@
-import React, { JSX, useState } from 'react';
+import { JSX, useState } from 'react';
 import { Paperclip, Link, Image, HelpCircle, Send, Clock } from 'lucide-react';
 import Menu from './Components/Menu'
 import MessagesFooter from './Components/MessagesFooter';

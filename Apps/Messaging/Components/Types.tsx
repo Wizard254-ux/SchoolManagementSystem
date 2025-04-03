@@ -1,5 +1,5 @@
 // src/types/index.ts
-export interface SchoolAccount {
+export interface SchoolAccountInterface {
     accountName: string;
     phoneNumber: string;
     email: string;

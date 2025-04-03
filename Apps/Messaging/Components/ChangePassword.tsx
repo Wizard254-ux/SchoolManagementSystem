@@ -1,6 +1,5 @@
 // src/components/ChangePassword.tsx
 import React, { useState } from "react";
-import { Lock } from "lucide-react";
 import { PasswordChange } from "./Types";
 import { changePassword } from "./DummyData";
 

@@ -1,11 +1,10 @@
 // src/components/SchoolAccount.tsx
 import React, { useState, useEffect } from "react";
-import { User } from "lucide-react";
 import { fetchSchoolAccount, updateSchoolAccount } from "./DummyData";
-import { SchoolAccount } from "./Types";
+import { SchoolAccountInterface } from "./Types";
 
 const SchoolAccount: React.FC = () => {
-  const [account, setAccount] = useState<SchoolAccount>({
+  const [account, setAccount] = useState<SchoolAccountInterface>({
     accountName: "",
     phoneNumber: "",
     email: "",

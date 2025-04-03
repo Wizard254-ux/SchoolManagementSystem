@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronDown, ChevronRight, Filter, RefreshCcw, Search } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronDown, ChevronRight, RefreshCcw, Search } from 'lucide-react';
 
 // Define the type for a message
 interface Message {
@@ -27,7 +27,6 @@ const EmailDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('Sent');
   const [selectedMessages, setSelectedMessages] = useState<string[]>([]);
   const [filterType, setFilterType] = useState<string | null>(null);
-  const [showFilter, setShowFilter] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [showSearch, setShowSearch] = useState<boolean>(false);
 
@@ -80,9 +79,6 @@ const EmailDashboard: React.FC = () => {
   };
 
   // Handle filter toggle and apply filter
-  const toggleFilter = () => {
-    setShowFilter((prev) => !prev);
-  };
 
 
   // Handle refresh

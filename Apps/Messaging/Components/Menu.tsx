@@ -1,5 +1,5 @@
-import React,{JSX,useEffect,useState} from 'react'
-import { MessageSquare, User, BarChart, Settings, Gift, Monitor } from 'lucide-react';
+import {JSX,useEffect,useState} from 'react'
+import { MessageSquare, User, BarChart, Settings, Gift } from 'lucide-react';
 import { useNavigate,useLocation } from 'react-router-dom';
 
 const Menu=():JSX.Element=>{

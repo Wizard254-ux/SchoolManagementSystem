@@ -1,4 +1,4 @@
-import { Contact } from '../Contact';
+import { Contact,ContactType } from '../Contact';
 const API_BASE_URL = 'http://your-api-endpoint.com/api';
 
 interface Group {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, UserCog, UserX, Archive, Plus, Edit, Trash2,Group } from 'lucide-react';
+import { Users, UserCog, UserX, Plus, Edit, Trash2 } from 'lucide-react';
 
 interface Props {
   activeContactType: 'Students' | 'Teachers' | 'Non Teaching Staff';

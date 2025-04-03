@@ -1,21 +1,21 @@
 // src/api/dummyData.ts
-import { SchoolAccount, PasswordChange } from "./Types";
+import { SchoolAccountInterface, PasswordChange } from "./Types";
 
-export const dummySchoolAccount: SchoolAccount = {
+export const dummySchoolAccount: SchoolAccountInterface = {
   accountName: "Alpha Secondary",
   phoneNumber: "0113765336",
   email: "brianesa262@gmail.com",
 };
 
-export const fetchSchoolAccount = async (): Promise<SchoolAccount> => {
+export const fetchSchoolAccount = async (): Promise<SchoolAccountInterface> => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(dummySchoolAccount), 500);
   });
 };
 
 export const updateSchoolAccount = async (
-  data: SchoolAccount
-): Promise<SchoolAccount> => {
+  data: SchoolAccountInterface
+): Promise<SchoolAccountInterface> => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(data), 500);
   });

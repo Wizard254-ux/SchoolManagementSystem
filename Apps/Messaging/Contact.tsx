@@ -20,7 +20,7 @@ export interface Contact {
 }
 interface Group {
   name: string;
-  contactType: ContactType;
+  contactType: 'Students' | 'Teachers' | 'Non Teaching Staff';
 }
 
 const ContactManagementSystem: React.FC = () => {

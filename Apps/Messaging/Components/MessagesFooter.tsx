@@ -103,19 +103,19 @@ const EmailDashboard: React.FC = () => {
   };
 
   return (
-    <div className="flex pl-[2%] bg-gray-100">
+    <div className="flex flex-col md:flex-row mt-2 bg-gray-100">
       {/* Sidebar */}
-      <div className="w-1/5 bg-white border-r border-gray-300 p-4">
-        <div className="flex items-center mb-4">
-          <h2 className="text-lg font-semibold  text-[14px]">2025</h2>
+      <div className="md:w-1/5 flex md:flex-col flex-row w-full  md:bg-white border-r border-gray-300 p-2 md:p-4">
+        <div className="md:flex hidden items-center mb-4">
+          <h2 className="md:text-lg font-semibold  text-[14px]">2025</h2>
           <ChevronDown className="ml-2 h-5 hover:cursor-pointer w-5 text-gray-500" />
         </div>
-        <ul className="space-y-2">
+        <ul className="flex  md:min-w-0 md:flex-col md:justify-between space-y-2 w-full scrollbar-hidden overflow-auto">
           {['Replies', 'Sent', 'Scheduled', 'Outbox', 'Archives'].map((tab) => (
             <li
               key={tab}
               onClick={() => handleTabChange(tab)}
-              className={`flex hover:bg-blue-100 text-[14px]  transition  duration-300 hover:cursor-pointer items-center px-2 py-1 rounded cursor-pointer ${
+              className={`flex max-w-[10rem] hover:bg-blue-100 text-[12px] md:text-[13px]  transition  duration-300 hover:cursor-pointer items-center px-2 py-1 rounded cursor-pointer ${
                 activeTab === tab ? 'bg-blue-500 text-white' : 'text-gray-600'
               }`}
             >
@@ -127,34 +127,34 @@ const EmailDashboard: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 p-6 h-80 overflow-y-auto mb-5">
+      <div className="flex-1 md:p-6 py-6 pt-2 h-80  mb-5">
         {/* Header */}
-        <div className="flex justify-between items-center mb-3">
-          <div className="flex items-center space-x-2">
+        <div className="flex min-w-[18rem] overflow-auto scrollbar-hidden px-4 pb-2 md:pb-0  justify-between items-center mb-3">
+          <div className="flex items-center space-x-2 mr-2 md:mr-0">
             <select
-              className="border border-gray-300 rounded px-2 py-1 text-sm"
+              className="border border-gray-300 rounded px-2 py-1 text-[12px] md:text-[13px]"
               onChange={(e) => handleMessageAction(e.target.value)}
               defaultValue=""
             >
               <option value="" disabled>
                 Message Actions
               </option>
-              <option className='text-[13px]' value="delete">Delete</option>
-              <option className='text-[13px]' value="markAsRead">Mark as Read</option>
+              <option className='text-[12px] md:text-[13px]' value="delete">Delete</option>
+              <option className='text-[12px] md:text-[13px]' value="markAsRead">Mark as Read</option>
             </select>
           </div>
           <div className="flex items-center space-x-2">
          
             <button
               onClick={handleRefresh}
-              className="flex text-[13px] hover:scale-105 transform transition duration-300 ease-in-out hover:cursor-pointer items-center border border-gray-300 rounded px-3 py-1 text-sm"
+              className="flex text-[12px] md:text-[13px] hover:scale-105 transform transition duration-300 ease-in-out hover:cursor-pointer items-center border border-gray-300 rounded px-3 py-1 "
             >
               <RefreshCcw className="h-4 w-4 mr-2" />
               Refresh
             </button>
             <button
               onClick={toggleSearch}
-              className="flex  text-[13px] hover:scale-105 transform transition duration-300 ease-in-out hover:cursor-pointer items-center border border-gray-300 rounded px-3 py-1 text-sm"
+              className="flex text-[12px] md:text-[13px] hover:scale-105 transform transition duration-300 ease-in-out hover:cursor-pointer items-center border border-gray-300 rounded px-3 py-1 "
             >
               <Search className="h-4 w-4 mr-2" />
               Search
@@ -178,7 +178,7 @@ const EmailDashboard: React.FC = () => {
         )}
 
         {/* Table */}
-        <div className="bg-white rounded-lg shadow mb-8">
+        <div className="bg-white min-w-[18rem] px-4 overflow-auto rounded-lg shadow mb-8">
           <table className="w-full text-left">
             <thead>
               <tr className="bg-gray-50">
@@ -204,7 +204,7 @@ const EmailDashboard: React.FC = () => {
               {filteredMessages.length > 0 ? (
                 filteredMessages.map((message) => (
                   <tr key={message.id} className="border-t border-gray-200">
-                    <td className="p-3">
+                    <td className="p-3 text-[13px] ">
                       <input
                         type="checkbox"
                         checked={selectedMessages.includes(message.id)}

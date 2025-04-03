@@ -17,9 +17,9 @@ const Message =():JSX.Element => {
   const handleCalender=(showState:boolean)=>{
     setShowCalender(showState)
   }
-  const handleTimeStamp=(timestamp:string)=>{
-    setTimeStamp(timestamp)
-    console.log(timestamp)
+  const handleTimeStamp=(tmeStamp:string)=>{
+    setTimeStamp(tmeStamp)
+    console.log(timeStamp)
   }
 
 

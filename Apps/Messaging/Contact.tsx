@@ -8,9 +8,9 @@ import NavBar from './Components/NavBar';
 import Menu from './Components/Menu';
 
 // Types
-type ContactType = 'Students' | 'Teachers' | 'Non Teaching Staff';
+export type ContactType = 'Students' | 'Teachers' | 'Non Teaching Staff';
 
-interface Contact {
+export interface Contact {
   id: string;
   name: string;
   primaryNumber: string;
@@ -18,7 +18,6 @@ interface Contact {
   contactType: ContactType;
   group: string;
 }
-
 interface Group {
   name: string;
   contactType: ContactType;

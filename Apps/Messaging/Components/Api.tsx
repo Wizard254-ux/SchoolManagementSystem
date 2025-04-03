@@ -1,13 +1,5 @@
+import { Contact } from '../Contact';
 const API_BASE_URL = 'http://your-api-endpoint.com/api';
-
-interface Contact {
-  id: string;
-  name: string;
-  primaryNumber: string;
-  secondaryNumber?: string;
-  contactType: 'Students' | 'Teachers' | 'Non Teaching Staff';
-  group: string;
-}
 
 interface Group {
   name: string;

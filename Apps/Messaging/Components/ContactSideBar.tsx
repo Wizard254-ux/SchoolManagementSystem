@@ -1,12 +1,13 @@
 import React from 'react';
 import { Users, UserCog, UserX, Plus, Edit, Trash2 } from 'lucide-react';
+import { ContactType } from '../Contact';
 
 interface Props {
   activeContactType: 'Students' | 'Teachers' | 'Non Teaching Staff';
   setActiveContactType: (type: 'Students' | 'Teachers' | 'Non Teaching Staff') => void;
-  groups: { name: string; contactType: string }[];
+  groups: { name: string; contactType: ContactType }[];
   setShowAddGroupModal: (show: boolean) => void;
-  onEditGroup: (group: { name: string; contactType: string }) => void;
+  onEditGroup: (group: { name: string; contactType: ContactType }) => void;
   onDeleteGroup: (groupName: string) => void;
 }
 

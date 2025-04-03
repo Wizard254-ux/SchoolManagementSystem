@@ -1,14 +1,6 @@
 import React from 'react';
 import { Search, Edit, Trash2 } from 'lucide-react';
-
-interface Contact {
-  id: string;
-  name: string;
-  primaryNumber: string;
-  secondaryNumber?: string;
-  contactType: string;
-  group: string;
-}
+import { Contact } from '../Contact';
 
 interface Props {
   contacts: Contact[];

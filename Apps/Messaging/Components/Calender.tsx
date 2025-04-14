@@ -67,42 +67,40 @@ const Calender: React.FC <CalenderProps>= ({showCalender,setShowCalender,handleT
     setTime('');
   };
 
-  return (<div className=''>
-      {showCalender ?
-        <div className="flex fixed flex-col bg-gray-400 rounded-lg z-10000 h-80 w-80 p-[50px] top-[20%] right-[10%] md:right-[30%] gap-4">
-            <X className="absolute top-4 right-4 text-white text-2xl hover:text-red-600 transition-colors" size={24} onClick={() => setShowCalender(false)} />
+  return  (showCalender?   <div className={`bg-[rgba(0,0,0,0.5)] fixed left-0 right-0 top-0 bottom-0`}>
+        <div className="flex fixed flex-col bg-white   rounded-lg z-10000 h-60 w-70 p-[50px] top-[20%] right-[10%] md:right-[30%] gap-4">
+            <X className="absolute top-4 right-4 text-blue-500 text-2xl hover:text-red-600 transition-colors" size={24} onClick={() => setShowCalender(false)} />
         <div className="relative">
-            <Calendar className="text-white absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={20} />
+            <Calendar className="text-blue-500 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" size={20} />
             <input
               type="date"
               value={date}
               onChange={handleDateChange}
               min={new Date().toISOString().split('T')[0]}
-              className="w-full pl-10 text-white pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full pl-10 text-black text-[13px] md:text-[14px] pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           <div className="relative">
-            <Clock className="absolute left-3 text-white top-1/2 transform -translate-y-1/2 text-gray-500" size={20} />
+            <Clock className="absolute left-3 text-black top-1/2 transform -translate-y-1/2 text-gray-500" size={20} />
             <input
               type="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
               min={minTime}
-              className="w-full pl-10 pr-3 py-2 text-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full pl-10 pr-3 text-[13px] md:text-[14px] py-2 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
           <button
             onClick={handleConfirm}
-            className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-green-600 transition-colors"
+            className="flex items-center text-[13px] md:text-[14px] justify-center px-4 py-2 bg-blue-500 text-black rounded-md hover:bg-green-600 transition-colors"
           >
             <Check className="mr-2" size={20} />
             Confirm
           </button>
         </div>
-        :
-        <></>
-}</div>
-  );
+
+</div>
+ :<></> );
 };
 
 export default Calender;

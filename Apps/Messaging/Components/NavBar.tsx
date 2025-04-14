@@ -3,10 +3,10 @@ import {
   User, 
   LogOut, 
   Menu, 
-  Book, 
-  Calendar, 
-  Award,
-  ChevronDown
+  ChevronDown,
+  LucideWallet2,
+  BookAIcon,
+  MessageSquare
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -26,9 +26,9 @@ const NavBar: React.FC<NavbarProps> = ({
   const appsTimeoutRef = useRef<number | null>(null);
 
   const apps = [
-    { name: "Academic Portal", icon: <Book size={18} /> },
-    { name: "Attendance System", icon: <Calendar size={18} /> },
-    { name: "Results Center", icon: <Award size={18} /> }
+    { name: "Communication Portal", icon: <MessageSquare size={18} /> },
+    { name: "Finance System", icon: <LucideWallet2 size={18} /> },
+    { name: "Academics Center", icon: <BookAIcon size={18} /> }
   ];
   
   const startAdminCloseTimer = () => {

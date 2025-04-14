@@ -42,7 +42,6 @@ const ContactTable: React.FC<Props> = ({ contacts,setShowAddModal,activeContactT
         <table className="w-full ">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-3 md:px-4 py-1 md:py-3 text-left text-[12px] md:text-[13px]  font-medium text-gray-600">ID</th>
               <th className="px-3 md:px-4 py-1 md:py-3 text-left text-[12px] md:text-[13px]  font-medium text-gray-600">Name</th>
               <th className="px-3 md:px-4 py-1 md:py-3 text-left text-[12px] md:text-[13px]  font-medium text-gray-600">Primary Number</th>
               <th className="px-3 md:px-4 py-1 md:py-3 text-left text-[12px] md:text-[13px]  font-medium text-gray-600">Secondary Number</th>
@@ -53,7 +52,6 @@ const ContactTable: React.FC<Props> = ({ contacts,setShowAddModal,activeContactT
           <tbody>
             {contacts.map(contact => (
               <tr key={contact.id} className="border-t hover:bg-gray-50">
-                <td className="px-3 md:px-4 py-1 md:py-3 text-[12px] md:text-[13px] ">{contact.id}</td>
                 <td className="px-3 md:px-4 py-1 md:py-3 text-[12px] md:text-[13px] ">{contact.name}</td>
                 <td className="px-3 md:px-4 py-1 md:py-3 text-[12px] md:text-[13px] ">{contact.primaryNumber}</td>
                 <td className="px-3 md:px-4 py-1 md:py-3 text-[12px] md:text-[13px] ">{contact.secondaryNumber || '-'}</td>

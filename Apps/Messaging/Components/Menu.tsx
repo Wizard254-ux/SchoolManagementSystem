@@ -1,23 +1,27 @@
-import {JSX,useEffect,useState} from 'react'
+import React, { JSX, useEffect, useState } from 'react'
 import { MessageSquare, User, BarChart, Settings, Gift } from 'lucide-react';
-import { useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const Menu=():JSX.Element=>{
+const Menu = (): JSX.Element => {
   const navigate = useNavigate();
-  const [activePage,setactivePage]=useState<string>('')
-  const location=useLocation()
+  const location = useLocation();
+  const [activePage, setActivePage] = useState<string>('');
 
-  useEffect(()=>{
-    console.log(location.pathname)
-    setactivePage(location.pathname.replace('/', ''))
-  },[])
-
-
-  function handlePageChanges(routeName:string):void{
-    setactivePage(routeName)
-    navigate(`/${routeName}`)
-  }
+  useEffect(() => {
+    // Extract the active page from the current path
+    const path = location.pathname;
+    const pathSegments = path.split('/');
+    const currentPage = pathSegments[pathSegments.length - 1] || 'Messages';
     
+    // Set the active page based on the current URL
+    setActivePage(currentPage);
+  }, [location.pathname]);
+
+  function handlePageChanges(routeName: string): void {
+    setActivePage(routeName);
+    navigate(`/apps/communication/${routeName}`);
+  }
+
   return (
     <div className="md:w-64 min-w-[5rem] w-[5rem] sm:w-[10rem] bg-white border h-screen overflow-auto border-w-1 border-gray-300 mr-2">
     {/* Profile Section */}
